@@ -1,1 +1,43 @@
-<p>properties-page works!</p>
+<h1>Mutaciones</h1>
+<hr>
+
+<div class="row">
+    <div class="col-6">
+        <div class="form-group mb-3">
+            <input
+                #textEmail
+                type="text"
+                class="form-control"
+                (input)="onFieldUpdated('email', textEmail.value)"
+                [value]="user().email"
+            >
+        </div>  
+
+        <div class="form-group mb-3">
+            <input
+                #textFirstName
+                type="text"
+                class="form-control"
+                (input)="onFieldUpdated('first_name', textFirstName.value)"
+                [value]="user().first_name"
+            >
+        </div>
+        
+        <div class="form-group mb-3">
+            <input
+                #textLastName
+                type="text"
+                class="form-control"
+                (input)="onFieldUpdated('last_name', textLastName.value)"
+                [value]="user().last_name"
+            >
+        </div>
+        <button class="btn btn-primary" (click)="increaseBy(1)">
+            +1 
+        </button>
+    </div>
+    <div class="col-6">
+        Nombre completo:
+        {{fullName()}}
+    </div>
+</div>
